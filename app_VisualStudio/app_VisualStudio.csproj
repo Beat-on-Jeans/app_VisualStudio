@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +61,69 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Actuacion.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chats.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Generos_Musicales.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Generos_Usuarios.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Locales.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Matches.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Mensajes.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBoJ.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBoJ.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBoJ.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelBoJ.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelBoJ.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Musicos.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Notificaciones.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roles.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Soporte.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TipoIncidencia.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuarioMobil.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usuarios.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuariosCSharp.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Valoracion.cs">
+      <DependentUpon>ModelBoJ.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -63,6 +135,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="Models\ModelBoJ.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelBoJ.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\ModelBoJ.edmx.diagram">
+      <DependentUpon>ModelBoJ.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +155,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Models\ModelBoJ.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelBoJ.Context.cs</LastGenOutput>
+      <DependentUpon>ModelBoJ.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ModelBoJ.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelBoJ.edmx</DependentUpon>
+      <LastGenOutput>ModelBoJ.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
